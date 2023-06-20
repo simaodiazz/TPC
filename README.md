@@ -572,6 +572,451 @@ class Program
                 Console.WriteLine("Mês inválido");
                 break;
         }
+
+        // Exercício 52: Operações lógicas
+        Console.WriteLine(4 == 5);
+        Console.WriteLine(4 != 6);
+        Console.WriteLine(4 > 5);
+        Console.WriteLine(true == false);
+        Console.WriteLine('a' == 'a');
+        Console.WriteLine('a' == 'b');
+        Console.WriteLine(2 < 3 && 3 > 4);
+        Console.WriteLine(2 < 3 || 3 > 4);
+        Console.WriteLine(!(2 < 3 || 3 > 4));
+
+        // Exercício 53: Conversão de valor real para inteiro por arredondamento
+        Console.Write("Digite um valor real positivo: ");
+        double valorReal = double.Parse(Console.ReadLine());
+        int valorInteiro = (int)Math.Round(valorReal);
+        Console.WriteLine("Valor inteiro arredondado: " + valorInteiro);
+
+        // Exercício 54: Cálculo do salário semanal
+        Console.Write("Digite o número de horas trabalhadas: ");
+        int horasTrabalhadas = int.Parse(Console.ReadLine());
+        Console.Write("Digite o valor do salário por hora: ");
+        double salarioPorHora = double.Parse(Console.ReadLine());
+
+        double salarioSemanal;
+        if (horasTrabalhadas <= 40)
+        {
+            salarioSemanal = horasTrabalhadas * salarioPorHora;
+        }
+        else
+        {
+            double horasExtras = horasTrabalhadas - 40;
+            salarioSemanal = (40 * salarioPorHora) + (horasExtras * salarioPorHora * 2);
+        }
+
+        Console.WriteLine("Salário semanal a pagar: " + salarioSemanal);
+
+        // Exercício 55: Ordenação de três números
+        Console.Write("Digite o primeiro número: ");
+        int numero1 = int.Parse(Console.ReadLine());
+        Console.Write("Digite o segundo número: ");
+        int numero2 = int.Parse(Console.ReadLine());
+        Console.Write("Digite o terceiro número: ");
+        int numero3 = int.Parse(Console.ReadLine());
+
+        if (numero1 <= numero2 && numero1 <= numero3)
+        {
+            Console.Write(numero1 + " ");
+            if (numero2 <= numero3)
+            {
+                Console.WriteLine(numero2 + " " + numero3);
+            }
+            else
+            {
+                Console.WriteLine(numero3 + " " + numero2);
+            }
+        }
+        else if (numero2 <= numero1 && numero2 <= numero3)
+        {
+            Console.Write(numero2 + " ");
+            if (numero1 <= numero3)
+            {
+                Console.WriteLine(numero1 + " " + numero3);
+            }
+            else
+            {
+                Console.WriteLine(numero3 + " " + numero1);
+            }
+        }
+        else
+        {
+            Console.Write(numero3 + " ");
+            if (numero1 <= numero2)
+            {
+                Console.WriteLine(numero1 + " " + numero2);
+            }
+            else
+            {
+                Console.WriteLine(numero2 + " " + numero1);
+            }
+        }
+
+        // Exercício 56: Determinação do símbolo do zodíaco
+        Console.Write("Digite o dia do seu nascimento: ");
+        int dia = int.Parse(Console.ReadLine());
+        Console.Write("Digite o mês do seu nascimento: ");
+        int mes = int.Parse(Console.ReadLine());
+
+        string simboloZodiaco = "";
+
+        if ((mes == 1 && dia >= 20) || (mes == 2 && dia <= 18))
+        {
+            simboloZodiaco = "Aquário";
+        }
+        else if ((mes == 2 && dia >= 19) || (mes == 3 && dia <= 20))
+        {
+            simboloZodiaco = "Peixes";
+        }
+        else if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 19))
+        {
+            simboloZodiaco = "Áries";
+        }
+        else if ((mes == 4 && dia >= 20) || (mes == 5 && dia <= 20))
+        {
+            simboloZodiaco = "Touro";
+        }
+        else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 20))
+        {
+            simboloZodiaco = "Gêmeos";
+        }
+        else if ((mes == 6 && dia >= 21) || (mes == 7 && dia <= 22))
+        {
+            simboloZodiaco = "Câncer";
+        }
+        else if ((mes == 7 && dia >= 23) || (mes == 8 && dia <= 22))
+        {
+            simboloZodiaco = "Leão";
+        }
+        else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22))
+        {
+            simboloZodiaco = "Virgem";
+        }
+        else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22))
+        {
+            simboloZodiaco = "Libra";
+        }
+        else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21))
+        {
+            simboloZodiaco = "Escorpião";
+        }
+        else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21))
+        {
+            simboloZodiaco = "Sagitário";
+        }
+        else if ((mes == 12 && dia >= 22) || (mes == 1 && dia <= 19))
+        {
+            simboloZodiaco = "Capricórnio";
+        }
+
+        Console.WriteLine("Seu símbolo do zodíaco é: " + simboloZodiaco);
+
+        // Exercício 57: Primeiros dez números inteiros positivos
+        int contador = 1;
+        while (contador <= 10)
+        {
+            Console.WriteLine(contador);
+            contador++;
+        }
+
+        // Exercício 58: Primeiros 50 números inteiros positivos
+        contador = 1;
+        while (contador <= 50)
+        {
+            Console.WriteLine(contador);
+            contador++;
+        }
+
+        // Exercício 59: Tabuada do 5
+        int numero = 5;
+        contador = 1;
+        while (contador <= 10)
+        {
+            Console.WriteLine(numero + " x " + contador + " = " + (numero * contador));
+            contador++;
+        }
+
+        // Exercício 60: Tabuada de um número digitado pelo usuário
+        Console.Write("Digite um número para a tabuada: ");
+        numero = int.Parse(Console.ReadLine());
+        contador = 1;
+        while (contador <= 10)
+        {
+            Console.WriteLine(numero + " x " + contador + " = " + (numero * contador));
+            contador++;
+        }
+
+        // Exercício 61: Verificação de número primo
+        Console.Write("Digite um número: ");
+        int numeroPrimo = int.Parse(Console.ReadLine());
+
+        bool ehPrimo = true;
+        if (numeroPrimo <= 1)
+        {
+            ehPrimo = false;
+        }
+        else
+        {
+            for (int i = 2; i <= Math.Sqrt(numeroPrimo); i++)
+            {
+                if (numeroPrimo % i == 0)
+                {
+                    ehPrimo = false;
+                    break;
+                }
+            }
+        }
+
+        if (ehPrimo)
+        {
+            Console.WriteLine("O número é primo.");
+        }
+        else
+        {
+            Console.WriteLine("O número não é primo.");
+        }
+
+        // Exercício 62: Primeiros 50 números inteiros positivos com while
+        contador = 1;
+        while (contador <= 50)
+        {
+            Console.WriteLine(contador);
+            contador++;
+        }
+
+        // 63. Contar números introduzidos pelo utilizador
+        int contadorNumeros = 0;
+        int numero;
+        List<int> numerosIntroduzidos = new List<int>();
+
+        do
+        {
+            Console.Write("Introduza um número (0 para sair): ");
+            numero = int.Parse(Console.ReadLine());
+
+            if (numero != 0)
+            {
+                contadorNumeros++;
+                numerosIntroduzidos.Add(numero);
+            }
+        } while (numero != 0);
+
+        Console.WriteLine($"Foram introduzidos {contadorNumeros} números.");
+
+        // 64. Calcular a média dos números introduzidos pelo utilizador
+        if (numerosIntroduzidos.Count > 0)
+        {
+            double soma = 0;
+
+            foreach (int num in numerosIntroduzidos)
+            {
+                soma += num;
+            }
+
+            double media = soma / numerosIntroduzidos.Count;
+            Console.WriteLine($"A média dos números introduzidos é: {media}");
+        }
+        else
+        {
+            Console.WriteLine("Nenhum número foi introduzido.");
+        }
+
+        // 65. Jogo de adivinhar número gerado pelo computador
+        Random random = new Random();
+        int numeroAleatorio = random.Next(1, 101);
+        int tentativas = 0;
+        int palpite;
+
+        Console.WriteLine("Adivinhe o número gerado pelo computador (entre 1 e 100):");
+
+        do
+        {
+            Console.Write("Insira o seu palpite: ");
+            palpite = int.Parse(Console.ReadLine());
+            tentativas++;
+
+            if (palpite < numeroAleatorio)
+            {
+                Console.WriteLine("O número é maior.");
+            }
+            else if (palpite > numeroAleatorio)
+            {
+                Console.WriteLine("O número é menor.");
+            }
+            else
+            {
+                Console.WriteLine($"Parabéns! Adivinhou o número em {tentativas} tentativas.");
+            }
+        } while (palpite != numeroAleatorio);
+
+        // 66. Soma com incrementos de 3 usando diferentes ciclos de repetição
+        int somaFor = 0;
+        int somaWhile = 0;
+        int somaDoWhile = 0;
+
+        for (int i = 4; i < 100; i += 3)
+        {
+            somaFor += i;
+        }
+
+        int j = 4;
+        while (j < 100)
+        {
+            somaWhile += j;
+            j += 3;
+        }
+
+        int k = 4;
+        do
+        {
+            somaDoWhile += k;
+            k += 3;
+        } while (k < 100);
+
+        Console.WriteLine($"Soma com incrementos de 3 (for): {somaFor}");
+        Console.WriteLine($"Soma com incrementos de 3 (while): {somaWhile}");
+        Console.WriteLine($"Soma com incrementos de 3 (do...while): {somaDoWhile}");
+
+        // 67. Calcular potência sem usar Pow
+        Console.Write("Introduza a base: ");
+        int baseNum = int.Parse(Console.ReadLine());
+
+        Console.Write("Introduza o expoente: ");
+        int expoente = int.Parse(Console.ReadLine());
+
+        int resultadoPotencia = 1;
+
+        for (int i = 1; i <= expoente; i++)
+        {
+            resultadoPotencia *= baseNum;
+        }
+
+        Console.WriteLine($"O resultado de {baseNum} elevado a {expoente} é: {resultadoPotencia}");
+
+        // 68. Estatísticas de altura dos alunos
+        Console.Write("Introduza o número de alunos: ");
+        int numeroAlunos = int.Parse(Console.ReadLine());
+
+        double alturaMaisBaixa = double.MaxValue;
+        double alturaMaisAlta = double.MinValue;
+        double somaAlturas = 0;
+
+        for (int i = 1; i <= numeroAlunos; i++)
+        {
+            Console.Write($"Introduza a altura do aluno {i}: ");
+            double altura = double.Parse(Console.ReadLine());
+
+            if (altura < alturaMaisBaixa)
+            {
+                alturaMaisBaixa = altura;
+            }
+
+            if (altura > alturaMaisAlta)
+            {
+                alturaMaisAlta = altura;
+            }
+
+            somaAlturas += altura;
+        }
+
+        double mediaAlturas = somaAlturas / numeroAlunos;
+
+        Console.WriteLine($"Altura do aluno mais baixo: {alturaMaisBaixa}");
+        Console.WriteLine($"Altura do aluno mais alto: {alturaMaisAlta}");
+        Console.WriteLine($"Soma das alturas: {somaAlturas}");
+        Console.WriteLine($"Média das alturas: {mediaAlturas}");
+
+        // 69. Conversão decimal para binário
+        Console.Write("Introduza um número decimal: ");
+        int numeroDecimal = int.Parse(Console.ReadLine());
+
+        string numeroBinario = "";
+        while (numeroDecimal > 0)
+        {
+            int resto = numeroDecimal % 2;
+            numeroBinario = resto.ToString() + numeroBinario;
+            numeroDecimal = numeroDecimal / 2;
+        }
+
+        Console.WriteLine($"Número binário correspondente: {numeroBinario}");
+
+        // 70. Conversão binário para inteiro
+        Console.Write("Introduza um número binário: ");
+        string numeroBinarioStr = Console.ReadLine();
+
+        int numeroInteiro = 0;
+        int potencia = 0;
+        for (int i = numeroBinarioStr.Length - 1; i >= 0; i--)
+        {
+            int digito = int.Parse(numeroBinarioStr[i].ToString());
+            numeroInteiro += digito * (int)Math.Pow(2, potencia);
+            potencia++;
+        }
+
+        Console.WriteLine($"Número inteiro correspondente: {numeroInteiro}");
+
+        // 71. Total a pagar no parque de diversões
+        int totalPagar = 0;
+
+        Console.Write("Quantidade de bilhetes para crianças até aos 4 anos: ");
+        int bilhetesCrianca = int.Parse(Console.ReadLine());
+
+        Console.Write("Quantidade de bilhetes para crianças dos 6 aos 12 anos: ");
+        int bilhetesCrianca6_12 = int.Parse(Console.ReadLine());
+
+        Console.Write("Quantidade de bilhetes para jovens dos 12 aos 17 anos: ");
+        int bilhetesJovem12_17 = int.Parse(Console.ReadLine());
+
+        Console.Write("Quantidade de bilhetes para adultos: ");
+        int bilhetesAdulto = int.Parse(Console.ReadLine());
+
+        totalPagar += bilhetesCrianca6_12 * 6;
+        totalPagar += bilhetesJovem12_17 * 12;
+        totalPagar += bilhetesAdulto * 18;
+
+        Console.WriteLine($"Total a pagar: {totalPagar} euros");
+
+        // 72. Verificar validade de um NIF
+        Console.Write("Introduza o NIF: ");
+        string nif = Console.ReadLine();
+
+        bool nifValido = false;
+
+        if (nif.Length == 9)
+        {
+            int[] pesos = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+
+            int soma = 0;
+
+            for (int i = 0; i < 9; i++)
+            {
+                int digito = int.Parse(nif[i].ToString());
+                soma += digito * pesos[i];
+            }
+
+            int resto = soma % 11;
+            int digitoVerificador = 11 - resto;
+
+            if (digitoVerificador >= 10)
+            {
+                digitoVerificador = 0;
+            }
+
+            int ultimoDigito = int.Parse(nif[8].ToString());
+
+            nifValido = digitoVerificador == ultimoDigito;
+        }
+
+        if (nifValido)
+        {
+            Console.WriteLine("NIF válido.");
+        }
+        else
+        {
+            Console.WriteLine("NIF inválido.");
+        }
     }
 }
 
